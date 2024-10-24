@@ -69,4 +69,4 @@ Podatci su spremljeni u datoteci `tehnoloski_bogatasi.csv` i `tehnoloski_bogatas
 
 ## Baza podataka korištena za spremanje podataka
 
-Podatci su spremljeni u PostgreSQL bazi podataka.
+Podatci su spremljeni u PostgreSQL bazi podataka. Docker slika baze podataka je dostupna na [Docker Hubu](https://hub.docker.com/r/jurerelja/or-fer).
