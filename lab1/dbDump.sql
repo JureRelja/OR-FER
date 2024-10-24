@@ -10,34 +10,38 @@ CREATE TABLE
     BogataOsoba (
         id serial primary key,
         ime varchar(100) NOT NULL,
-        srednjeIme varchar(100),
+        srednje_Ime varchar(100),
         prezime varchar(100) NOT NULL,
-        datumRodjenja date NOT NULL,
-        drzavaRodjenja varchar(100) NOT NULL,
-        drzavaStanovanja varchar(100) NOT NULL,
-        bogatstvoUMilijardamaDolara INTEGER NOT NULL,
-        pohadjaoFakultet varchar(100),
-        zavrsioFakultet BOOLEAN NOT NULL,
-        brojDjece INTEGER
+        datum_Rodjenja date NOT NULL,
+        drzava_Rodjenja varchar(100) NOT NULL,
+        drzava_Stanovanja varchar(100) NOT NULL,
+        bogatstvo_U_Milijardama_Dolara INTEGER NOT NULL,
+        pohadjao_Fakultet varchar(100),
+        zavrsio_Fakultet BOOLEAN NOT NULL,
+        broj_Djece INTEGER
     );
 
 CREATE TABLE
     Kompanija (
         id serial primary key,
         naziv varchar(100) NOT NULL,
-        godinaOsnivanja INTEGER NOT NULL,
-        drzavaSjedista varchar(100) NOT NULL,
+        godina_Osnivanja INTEGER NOT NULL,
+        drzava_Sjedista varchar(100) NOT NULL,
         sektor varchar(100) NOT NULL,
-        brojZaposlenih INTEGER NOT NULL,
-        procijenjenaVrijednostUMilijardamaDolara FLOAT NOT NULL,
-        izvrsniDirektor VARCHAR(100) NOT NULL
+        broj_Zaposlenih INTEGER NOT NULL,
+        procijenjena_Vrijednost_U_Milijardama_Dolara FLOAT NOT NULL,
+        izvrsni_Direktor VARCHAR(100) NOT NULL
     );
 
 CREATE TABLE
-    OsobaKompanija (idOsoba INTEGER NOT NULL REFERENCES BogataOsoba (id), idKompanija INTEGER NOT NULL REFERENCES Kompanija (id), CONSTRAINT osoba_kompanija_kljuc PRIMARY KEY (idOsoba, idKompanija));
+    OsobaKompanija (
+        id_Osoba INTEGER NOT NULL REFERENCES BogataOsoba (id),
+        id_Kompanija INTEGER NOT NULL REFERENCES Kompanija (id),
+        CONSTRAINT osoba_kompanija_kljuc PRIMARY KEY (id_Osoba, id_Kompanija)
+    );
 
 INSERT INTO
-    BogataOsoba (ime, srednjeIme, prezime, datumRodjenja, drzavaRodjenja, drzavaStanovanja, bogatstvoUMilijardamaDolara, pohadjaoFakultet, zavrsioFakultet, brojDjece)
+    BogataOsoba (ime, srednje_Ime, prezime, datum_Rodjenja, drzava_Rodjenja, drzava_Stanovanja, bogatstvo_U_Milijardama_Dolara, pohadjao_Fakultet, zavrsio_Fakultet, broj_Djece)
 VALUES
     ('Elon', 'Reeve', 'Musk', '1971-06-28', 'Južna Afrika', 'SAD', 247, 'Queens University', TRUE, 12),
     ('Jeff', 'Preston', 'Bezos', '1964-01-12', 'SAD', 'SAD', 177, 'Princeton University', TRUE, 4),
@@ -51,7 +55,7 @@ VALUES
     ('Jen-Hsun', NULL, 'Huang', '1963-02-17', 'Tajvan', 'SAD', 4, 'Stanford University', TRUE, 2);
 
 INSERT INTO
-    Kompanija (naziv, godinaOsnivanja, drzavaSjedista, sektor, brojZaposlenih, procijenjenaVrijednostUMilijardamaDolara, izvrsniDirektor)
+    Kompanija (naziv, godina_Osnivanja, drzava_Sjedista, sektor, broj_Zaposlenih, procijenjena_Vrijednost_U_Milijardama_Dolara, izvrsni_Direktor)
 VALUES
     --1.osoba
     ('Tesla, Inc.', 2003, 'SAD', 'Automobili', 48000, 277, 'Elon Musk'),
@@ -80,7 +84,7 @@ VALUES
     ('Nvidia', 1993, 'SAD', 'Grafičke kartice', 29600, 3400, 'Jensen Huang');
 
 INSERT INTO
-    OsobaKompanija (idOsoba, idKompanija)
+    OsobaKompanija (id_Osoba, id_Kompanija)
 VALUES
     (1, 1),
     (1, 2),
@@ -104,26 +108,26 @@ VALUES
 copy (
     SELECT
         BogataOsoba.ime,
-        BogataOsoba.srednjeIme,
+        BogataOsoba.srednje_Ime,
         BogataOsoba.prezime,
-        BogataOsoba.datumRodjenja,
-        BogataOsoba.drzavaRodjenja,
-        BogataOsoba.drzavaStanovanja,
-        BogataOsoba.bogatstvoUMilijardamaDolara,
-        BogataOsoba.pohadjaoFakultet,
-        BogataOsoba.zavrsioFakultet,
-        BogataOsoba.brojDjece,
+        BogataOsoba.datum_Rodjenja,
+        BogataOsoba.drzava_Rodjenja,
+        BogataOsoba.drzava_Stanovanja,
+        BogataOsoba.bogatstvo_U_Milijardama_Dolara,
+        BogataOsoba.pohadjao_Fakultet,
+        BogataOsoba.zavrsio_Fakultet,
+        BogataOsoba.broj_Djece,
         Kompanija.naziv,
-        Kompanija.godinaOsnivanja,
-        Kompanija.drzavaSjedista,
+        Kompanija.godina_Osnivanja,
+        Kompanija.drzava_Sjedista,
         Kompanija.sektor,
-        Kompanija.brojZaposlenih,
-        Kompanija.procijenjenaVrijednostUMilijardamaDolara,
-        Kompanija.izvrsniDirektor
+        Kompanija.broj_Zaposlenih,
+        Kompanija.procijenjena_Vrijednost_U_Milijardama_Dolara,
+        Kompanija.izvrsni_Direktor
     FROM
         OsobaKompanija
-        JOIN BogataOsoba ON OsobaKompanija.idOsoba = BogataOsoba.id
-        JOIN Kompanija ON OsobaKompanija.idKompanija = Kompanija.id
+        JOIN BogataOsoba ON OsobaKompanija.id_Osoba = BogataOsoba.id
+        JOIN Kompanija ON OsobaKompanija.id_Kompanija = Kompanija.id
 ) TO 'C:/tmp/tehnoloski_bogatasi.csv' DELIMITER ',' CSV HEADER;
 
 --priprema podataka za export u json
@@ -133,31 +137,31 @@ COPY (
         osobe as (
             SELECT
                 BogataOsoba.ime,
-                BogataOsoba.srednjeIme,
+                BogataOsoba.srednje_Ime,
                 BogataOsoba.prezime,
-                BogataOsoba.datumRodjenja,
-                BogataOsoba.drzavaRodjenja,
-                BogataOsoba.drzavaStanovanja,
-                BogataOsoba.bogatstvoUMilijardamaDolara,
-                BogataOsoba.pohadjaoFakultet,
-                BogataOsoba.zavrsioFakultet,
-                BogataOsoba.brojDjece,
-                json_agg (row_to_json (t)) as kompanijeSKojimeJeOsobaPovezana
+                BogataOsoba.datum_Rodjenja,
+                BogataOsoba.drzava_Rodjenja,
+                BogataOsoba.drzava_Stanovanja,
+                BogataOsoba.bogatstvo_U_Milijardama_Dolara,
+                BogataOsoba.pohadjao_Fakultet,
+                BogataOsoba.zavrsio_Fakultet,
+                BogataOsoba.broj_Djece,
+                json_agg (row_to_json (t)) as kompanije_S_Kojime_Je_Osoba_Povezana
             FROM
                 bogataOsoba
-                JOIN OsobaKompanija ON BogataOsoba.id = OsobaKompanija.idOsoba
-                JOIN Kompanija as t ON OsobaKompanija.idKompanija = t.id
+                JOIN OsobaKompanija ON BogataOsoba.id = OsobaKompanija.id_Osoba
+                JOIN Kompanija as t ON OsobaKompanija.id_Kompanija = t.id
             GROUP BY
                 BogataOsoba.ime,
-                BogataOsoba.srednjeIme,
+                BogataOsoba.srednje_Ime,
                 BogataOsoba.prezime,
-                BogataOsoba.datumRodjenja,
-                BogataOsoba.drzavaRodjenja,
-                BogataOsoba.drzavaStanovanja,
-                BogataOsoba.bogatstvoUMilijardamaDolara,
-                BogataOsoba.pohadjaoFakultet,
-                BogataOsoba.zavrsioFakultet,
-                BogataOsoba.brojDjece
+                BogataOsoba.datum_Rodjenja,
+                BogataOsoba.drzava_Rodjenja,
+                BogataOsoba.drzava_Stanovanja,
+                BogataOsoba.bogatstvo_U_Milijardama_Dolara,
+                BogataOsoba.pohadjao_Fakultet,
+                BogataOsoba.zavrsio_Fakultet,
+                BogataOsoba.broj_Djece
         )
         --naredba za export podataka u json
     SELECT
