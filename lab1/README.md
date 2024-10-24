@@ -24,26 +24,28 @@ Skup se sastoji od dva skupa podataka: **BogataOsoba** i **Kompanija**. Skup **B
 
 **BogataOsoba**
 
-ime: Naziv bogate osobe
-srednje_ime: Srednje ime bogate osobe (ako postoji)
-prezime: Prezime bogate osobe
-datum_rodjenja: Datum rođenja bogate (u formatu: yyyy.mm.dd)
-drzava_rodjenja: Država rođenja bogate osobe
-drzava_stanovanja: Država stanovanja bogate osobe
-bogatstvo_u_milijardama_folara: Bogatstvo bogate osobe u milijardama dolara
-pohadjao_fakultet: Fakultet koji je bogata osoba pohađala
-zavrsio_fakultet: Informacija o tome je li bogata osoba završila fakultet (true ili false)
-kompanije_kojime_je_osoba_povezana: Kompanije s kojima je bogata osoba povezana (npr. kao osnivač, suosnivač, zaposlenik, itd.)
+_id_: Jedinstveni identifikator bogate osobe  
+_ime_: Naziv bogate osobe  
+_srednje_ime_: Srednje ime bogate osobe (ako postoji)  
+_prezime_: Prezime bogate osobe  
+_datum_rodjenja_: Datum rođenja bogate (u formatu: yyyy.mm.dd)  
+_drzava_rodjenja_: Država rođenja bogate osobe  
+_drzava_stanovanja_: Država stanovanja bogate osobe  
+_bogatstvo_u_milijardama_folara_: Bogatstvo bogate osobe u milijardama dolara  
+_pohadjao_fakultet_: Fakultet koji je bogata osoba pohađala  
+_zavrsio_fakultet_: Informacija o tome je li bogata osoba završila fakultet (true ili false)  
+_kompanije_kojime_je_osoba_povezana_: Kompanije s kojima je bogata osoba povezana (npr. kao osnivač, suosnivač, zaposlenik, itd.)
 
 **Kompanija**
-id: Jedinstveni identifikator kompanije
-naziv: Naziv kompanije
-godina_osnivanja: Godina osnivanja kompanije
-drzava_sjedista: Država u kojoj kompanija ima sjedište
-sektor: Sektor u kojem kompanija posluje
-broj_zaposlenih: Broj zaposlenih u kompaniji
-procijenjena_vrijednost_u_milijardama_dolara: Procijenjena vrijednost kompanije u milijardama dolara
-izvrsni_direktor: Ime izvršnog direktora kompanije
+
+_id_: Jedinstveni identifikator kompanije  
+_naziv_: Naziv kompanije  
+_godina_osnivanja_: Godina osnivanja kompanije  
+_drzava_sjedista_: Država u kojoj kompanija ima sjedište  
+_sektor_: Sektor u kojem kompanija posluje  
+_broj_zaposlenih_: Broj zaposlenih u kompaniji  
+_procijenjena_vrijednost_u_milijardama_dolara_: Procijenjena vrijednost kompanije u milijardama dolara  
+_izvrsni_direktor_: Ime izvršnog direktora kompanije
 
 ### Podatci zadnji put ažurirani
 
