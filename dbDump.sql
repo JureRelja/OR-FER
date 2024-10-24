@@ -105,89 +105,64 @@ VALUES
     (10, 16);
 
 -- naredba za export podataka u csv fajl
-copy (
-    SELECT
-        BogataOsoba.ime,
-        BogataOsoba.srednje_Ime,
-        BogataOsoba.prezime,
-        BogataOsoba.datum_Rodjenja,
-        BogataOsoba.drzava_Rodjenja,
-        BogataOsoba.drzava_Stanovanja,
-        BogataOsoba.bogatstvo_U_Milijardama_Dolara,
-        BogataOsoba.pohadjao_Fakultet,
-        BogataOsoba.zavrsio_Fakultet,
-        BogataOsoba.broj_Djece,
-        Kompanija.naziv,
-        Kompanija.godina_Osnivanja,
-        Kompanija.drzava_Sjedista,
-        Kompanija.sektor,
-        Kompanija.broj_Zaposlenih,
-        Kompanija.procijenjena_Vrijednost_U_Milijardama_Dolara,
-        Kompanija.izvrsni_Direktor
-    FROM
-        OsobaKompanija
-        JOIN BogataOsoba ON OsobaKompanija.id_Osoba = BogataOsoba.id
-        JOIN Kompanija ON OsobaKompanija.id_Kompanija = Kompanija.id
-) TO 'C:/tmp/tehnoloski_bogatasi.csv' DELIMITER ',' CSV HEADER;
-
---priprema podataka za export u json
---naredba za export podataka u json 
-COPY (
-    with
-        osobe as (
-            SELECT
-                BogataOsoba.ime,
-                BogataOsoba.srednje_Ime,
-                BogataOsoba.prezime,
-                BogataOsoba.datum_Rodjenja,
-                BogataOsoba.drzava_Rodjenja,
-                BogataOsoba.drzava_Stanovanja,
-                BogataOsoba.bogatstvo_U_Milijardama_Dolara,
-                BogataOsoba.pohadjao_Fakultet,
-                BogataOsoba.zavrsio_Fakultet,
-                BogataOsoba.broj_Djece,
-                json_agg (row_to_json (t)) as kompanije_S_Kojime_Je_Osoba_Povezana
-            FROM
-                bogataOsoba
-                JOIN OsobaKompanija ON BogataOsoba.id = OsobaKompanija.id_Osoba
-                JOIN Kompanija as t ON OsobaKompanija.id_Kompanija = t.id
-            GROUP BY
-                BogataOsoba.ime,
-                BogataOsoba.srednje_Ime,
-                BogataOsoba.prezime,
-                BogataOsoba.datum_Rodjenja,
-                BogataOsoba.drzava_Rodjenja,
-                BogataOsoba.drzava_Stanovanja,
-                BogataOsoba.bogatstvo_U_Milijardama_Dolara,
-                BogataOsoba.pohadjao_Fakultet,
-                BogataOsoba.zavrsio_Fakultet,
-                BogataOsoba.broj_Djece
-        )
-        --naredba za export podataka u json
-    SELECT
-        json_agg (row_to_json (osobe))
-    FROM
-        osobe
-) TO 'C:/tmp/tehnoloski_bogatasi.json';
-
--- COPY (
+-- copy (
 --     SELECT
---         json_agg (e)
+--         BogataOsoba.ime,
+--         BogataOsoba.srednje_Ime,
+--         BogataOsoba.prezime,
+--         BogataOsoba.datum_Rodjenja,
+--         BogataOsoba.drzava_Rodjenja,
+--         BogataOsoba.drzava_Stanovanja,
+--         BogataOsoba.bogatstvo_U_Milijardama_Dolara,
+--         BogataOsoba.pohadjao_Fakultet,
+--         BogataOsoba.zavrsio_Fakultet,
+--         BogataOsoba.broj_Djece,
+--         Kompanija.naziv,
+--         Kompanija.godina_Osnivanja,
+--         Kompanija.drzava_Sjedista,
+--         Kompanija.sektor,
+--         Kompanija.broj_Zaposlenih,
+--         Kompanija.procijenjena_Vrijednost_U_Milijardama_Dolara,
+--         Kompanija.izvrsni_Direktor
 --     FROM
---         (
+--         OsobaKompanija
+--         JOIN BogataOsoba ON OsobaKompanija.id_Osoba = BogataOsoba.id
+--         JOIN Kompanija ON OsobaKompanija.id_Kompanija = Kompanija.id
+-- ) TO 'C:/tmp/tehnoloski_bogatasi.csv' DELIMITER ',' CSV HEADER;
+--naredba za export podataka u json 
+-- COPY (
+--     with
+--         osobe as (
 --             SELECT
 --                 BogataOsoba.ime,
---                 BogataOsoba.srednjeIme,
+--                 BogataOsoba.srednje_Ime,
 --                 BogataOsoba.prezime,
---                 BogataOsoba.datumRodjenja,
---                 BogataOsoba.drzavaRodjenja,
---                 BogataOsoba.drzavaStanovanja,
---                 BogataOsoba.bogatstvoUMilijardamaDolara,
---                 BogataOsoba.pohadjaoFakultet,
---                 BogataOsoba.zavrsioFakultet,
---                 BogataOsoba.brojDjece,
---                 json_agg (t) as kompanijeSKojimeJeOsobaPovezana
+--                 BogataOsoba.datum_Rodjenja,
+--                 BogataOsoba.drzava_Rodjenja,
+--                 BogataOsoba.drzava_Stanovanja,
+--                 BogataOsoba.bogatstvo_U_Milijardama_Dolara,
+--                 BogataOsoba.pohadjao_Fakultet,
+--                 BogataOsoba.zavrsio_Fakultet,
+--                 BogataOsoba.broj_Djece,
+--                 json_agg (row_to_json (t)) as kompanije_S_Kojime_Je_Osoba_Povezana
 --             FROM
 --                 bogataOsoba
---         ) as e
+--                 JOIN OsobaKompanija ON BogataOsoba.id = OsobaKompanija.id_Osoba
+--                 JOIN Kompanija as t ON OsobaKompanija.id_Kompanija = t.id
+--             GROUP BY
+--                 BogataOsoba.ime,
+--                 BogataOsoba.srednje_Ime,
+--                 BogataOsoba.prezime,
+--                 BogataOsoba.datum_Rodjenja,
+--                 BogataOsoba.drzava_Rodjenja,
+--                 BogataOsoba.drzava_Stanovanja,
+--                 BogataOsoba.bogatstvo_U_Milijardama_Dolara,
+--                 BogataOsoba.pohadjao_Fakultet,
+--                 BogataOsoba.zavrsio_Fakultet,
+--                 BogataOsoba.broj_Djece
+--         )
+--     SELECT
+--         json_agg (row_to_json (osobe))
+--     FROM
+--         osobe
 -- ) TO 'C:/tmp/tehnoloski_bogatasi.json';
