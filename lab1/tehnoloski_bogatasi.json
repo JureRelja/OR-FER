@@ -1,0 +1,312 @@
+[
+  {
+    "ime": "Sergey",
+    "srednjeime": "Mikhailovich",
+    "prezime": "Brin",
+    "datumrodjenja": "1973-08-21",
+    "drzavarodjenja": "Rusija",
+    "drzavastanovanja": "SAD",
+    "bogatstvoumilijardamadolara": 89,
+    "pohadjaofakultet": "Stanford University",
+    "zavrsiofakultet": true,
+    "brojdjece": 3,
+    "kompanijeskojimejeosobapovezana": [
+      {
+        "id": 13,
+        "naziv": "Google",
+        "godinaosnivanja": 1998,
+        "drzavasjedista": "SAD",
+        "sektor": "Hosting, Softver, Računala, Mobilni uređaji",
+        "brojzaposlenih": 182000,
+        "procijenjenavrijednostumilijardamadolara": 2000,
+        "izvrsnidirektor": "Sundar Pichai"
+      }
+    ]
+  },
+  {
+    "ime": "Larry",
+    "srednjeime": "Edward ",
+    "prezime": "Page",
+    "datumrodjenja": "1973-03-26",
+    "drzavarodjenja": "SAD",
+    "drzavastanovanja": "SAD",
+    "bogatstvoumilijardamadolara": 91,
+    "pohadjaofakultet": "Stanford University",
+    "zavrsiofakultet": true,
+    "brojdjece": 2,
+    "kompanijeskojimejeosobapovezana": [
+      {
+        "id": 13,
+        "naziv": "Google",
+        "godinaosnivanja": 1998,
+        "drzavasjedista": "SAD",
+        "sektor": "Hosting, Softver, Računala, Mobilni uređaji",
+        "brojzaposlenih": 182000,
+        "procijenjenavrijednostumilijardamadolara": 2000,
+        "izvrsnidirektor": "Sundar Pichai"
+      }
+    ]
+  },
+  {
+    "ime": "Lawrence",
+    "srednjeime": "Joseph",
+    "prezime": "Ellison",
+    "datumrodjenja": "1944-08-17",
+    "drzavarodjenja": "SAD",
+    "drzavastanovanja": "SAD",
+    "bogatstvoumilijardamadolara": 93,
+    "pohadjaofakultet": "University of Illinois at Urbana-Champaign",
+    "zavrsiofakultet": false,
+    "brojdjece": 2,
+    "kompanijeskojimejeosobapovezana": [
+      {
+        "id": 12,
+        "naziv": "Oracle Corporation",
+        "godinaosnivanja": 1977,
+        "drzavasjedista": "SAD",
+        "sektor": "Softverska kompanija",
+        "brojzaposlenih": 159000,
+        "procijenjenavrijednostumilijardamadolara": 481,
+        "izvrsnidirektor": "Safra Catz"
+      }
+    ]
+  },
+  {
+    "ime": "Jen-Hsun",
+    "srednjeime": null,
+    "prezime": "Huang",
+    "datumrodjenja": "1963-02-17",
+    "drzavarodjenja": "Tajvan",
+    "drzavastanovanja": "SAD",
+    "bogatstvoumilijardamadolara": 4,
+    "pohadjaofakultet": "Stanford University",
+    "zavrsiofakultet": true,
+    "brojdjece": 2,
+    "kompanijeskojimejeosobapovezana": [
+      {
+        "id": 16,
+        "naziv": "Nvidia",
+        "godinaosnivanja": 1993,
+        "drzavasjedista": "SAD",
+        "sektor": "Grafičke kartice",
+        "brojzaposlenih": 29600,
+        "procijenjenavrijednostumilijardamadolara": 3400,
+        "izvrsnidirektor": "Jensen Huang"
+      }
+    ]
+  },
+  {
+    "ime": "Mark",
+    "srednjeime": "Elliot",
+    "prezime": "Zuckerberg",
+    "datumrodjenja": "1984-05-14",
+    "drzavarodjenja": "SAD",
+    "drzavastanovanja": "SAD",
+    "bogatstvoumilijardamadolara": 97,
+    "pohadjaofakultet": "Harvard University",
+    "zavrsiofakultet": true,
+    "brojdjece": 3,
+    "kompanijeskojimejeosobapovezana": [
+      {
+        "id": 11,
+        "naziv": "Facebook",
+        "godinaosnivanja": 2004,
+        "drzavasjedista": "SAD",
+        "sektor": "Društvena mreža",
+        "brojzaposlenih": 86000,
+        "procijenjenavrijednostumilijardamadolara": 1100,
+        "izvrsnidirektor": "Mark Zuckerberg"
+      }
+    ]
+  },
+  {
+    "ime": "Wilmot",
+    "srednjeime": "Reed",
+    "prezime": "Hastings",
+    "datumrodjenja": "1960-10-08",
+    "drzavarodjenja": "SAD",
+    "drzavastanovanja": "SAD",
+    "bogatstvoumilijardamadolara": 5,
+    "pohadjaofakultet": "Stanford University",
+    "zavrsiofakultet": true,
+    "brojdjece": 2,
+    "kompanijeskojimejeosobapovezana": [
+      {
+        "id": 15,
+        "naziv": "Netflix",
+        "godinaosnivanja": 1997,
+        "drzavasjedista": "SAD",
+        "sektor": "Streaming servis",
+        "brojzaposlenih": 13000,
+        "procijenjenavrijednostumilijardamadolara": 320,
+        "izvrsnidirektor": "Reed Hastings"
+      }
+    ]
+  },
+  {
+    "ime": "Elon",
+    "srednjeime": "Reeve",
+    "prezime": "Musk",
+    "datumrodjenja": "1971-06-28",
+    "drzavarodjenja": "Južna Afrika",
+    "drzavastanovanja": "SAD",
+    "bogatstvoumilijardamadolara": 247,
+    "pohadjaofakultet": "Queens University",
+    "zavrsiofakultet": true,
+    "brojdjece": 12,
+    "kompanijeskojimejeosobapovezana": [
+      {
+        "id": 1,
+        "naziv": "Tesla, Inc.",
+        "godinaosnivanja": 2003,
+        "drzavasjedista": "SAD",
+        "sektor": "Automobili",
+        "brojzaposlenih": 48000,
+        "procijenjenavrijednostumilijardamadolara": 277,
+        "izvrsnidirektor": "Elon Musk"
+      },
+      {
+        "id": 2,
+        "naziv": "SpaceX",
+        "godinaosnivanja": 2002,
+        "drzavasjedista": "SAD",
+        "sektor": "Svemirske rakete",
+        "brojzaposlenih": 8000,
+        "procijenjenavrijednostumilijardamadolara": 74,
+        "izvrsnidirektor": "Elon Musk"
+      },
+      {
+        "id": 3,
+        "naziv": "The Boring Company",
+        "godinaosnivanja": 2016,
+        "drzavasjedista": "SAD",
+        "sektor": "Transportacijska infrastruktura",
+        "brojzaposlenih": 10,
+        "procijenjenavrijednostumilijardamadolara": 0.5,
+        "izvrsnidirektor": "Steve Davis"
+      },
+      {
+        "id": 4,
+        "naziv": "Neuralink",
+        "godinaosnivanja": 2016,
+        "drzavasjedista": "SAD",
+        "sektor": "Neurotehnoologija",
+        "brojzaposlenih": 100,
+        "procijenjenavrijednostumilijardamadolara": 0.1,
+        "izvrsnidirektor": "Jared Birchall"
+      },
+      {
+        "id": 5,
+        "naziv": "SolarCity",
+        "godinaosnivanja": 2006,
+        "drzavasjedista": "SAD",
+        "sektor": "Solarna energija",
+        "brojzaposlenih": 15000,
+        "procijenjenavrijednostumilijardamadolara": 2.6,
+        "izvrsnidirektor": "Lyndon Rive"
+      },
+      {
+        "id": 6,
+        "naziv": "X (bivši Twitter)",
+        "godinaosnivanja": 2010,
+        "drzavasjedista": "SAD",
+        "sektor": "Društvena mreža",
+        "brojzaposlenih": 100,
+        "procijenjenavrijednostumilijardamadolara": 0.5,
+        "izvrsnidirektor": "Elon Musk"
+      }
+    ]
+  },
+  {
+    "ime": "Bill",
+    "srednjeime": "Henry",
+    "prezime": "Gates",
+    "datumrodjenja": "1955-10-28",
+    "drzavarodjenja": "SAD",
+    "drzavastanovanja": "SAD",
+    "bogatstvoumilijardamadolara": 124,
+    "pohadjaofakultet": "Harvard University",
+    "zavrsiofakultet": true,
+    "brojdjece": 3,
+    "kompanijeskojimejeosobapovezana": [
+      {
+        "id": 10,
+        "naziv": "Microsoft",
+        "godinaosnivanja": 1975,
+        "drzavasjedista": "SAD",
+        "sektor": "Softverska kompanija, Mobilni uređaji, Računala",
+        "brojzaposlenih": 228000,
+        "procijenjenavrijednostumilijardamadolara": 3100,
+        "izvrsnidirektor": "Satya Nadella"
+      }
+    ]
+  },
+  {
+    "ime": "Jeff",
+    "srednjeime": "Preston",
+    "prezime": "Bezos",
+    "datumrodjenja": "1964-01-12",
+    "drzavarodjenja": "SAD",
+    "drzavastanovanja": "SAD",
+    "bogatstvoumilijardamadolara": 177,
+    "pohadjaofakultet": "Princeton University",
+    "zavrsiofakultet": true,
+    "brojdjece": 4,
+    "kompanijeskojimejeosobapovezana": [
+      {
+        "id": 7,
+        "naziv": "Amazon",
+        "godinaosnivanja": 1994,
+        "drzavasjedista": "SAD",
+        "sektor": "Online trgovina, Hosting, Softvere",
+        "brojzaposlenih": 1600000,
+        "procijenjenavrijednostumilijardamadolara": 1900,
+        "izvrsnidirektor": "Jeff Bezos"
+      },
+      {
+        "id": 8,
+        "naziv": "Blue Origin",
+        "godinaosnivanja": 2000,
+        "drzavasjedista": "SAD",
+        "sektor": "Svemirske rakete",
+        "brojzaposlenih": 11000,
+        "procijenjenavrijednostumilijardamadolara": 40,
+        "izvrsnidirektor": "Dave Limp"
+      },
+      {
+        "id": 9,
+        "naziv": "The Washington Post",
+        "godinaosnivanja": 1877,
+        "drzavasjedista": "SAD",
+        "sektor": "Novine",
+        "brojzaposlenih": 1050,
+        "procijenjenavrijednostumilijardamadolara": 0.25,
+        "izvrsnidirektor": "Will Lewis"
+      }
+    ]
+  },
+  {
+    "ime": "Steve",
+    "srednjeime": "Gary",
+    "prezime": "Wozniak",
+    "datumrodjenja": "1950-08-11",
+    "drzavarodjenja": "SAD",
+    "drzavastanovanja": "SAD",
+    "bogatstvoumilijardamadolara": 100,
+    "pohadjaofakultet": "University of California, Berkeley",
+    "zavrsiofakultet": true,
+    "brojdjece": 3,
+    "kompanijeskojimejeosobapovezana": [
+      {
+        "id": 14,
+        "naziv": "Apple Inc.",
+        "godinaosnivanja": 1976,
+        "drzavasjedista": "SAD",
+        "sektor": "Računala, Mobilni uređaji, Softver",
+        "brojzaposlenih": 147000,
+        "procijenjenavrijednostumilijardamadolara": 2000,
+        "izvrsnidirektor": "Tim Cook"
+      }
+    ]
+  }
+]
