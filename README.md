@@ -57,7 +57,6 @@ ISO 8601
 
 ## Podatci zadnji put ažurirani
 
-¸¸
 Podatci su zadnji put ažurirani 24. listopada 2024. godine.
 
 ## Oznaka kodne stranice
@@ -66,7 +65,7 @@ Podatci su u UTF-8 kodnoj stranici.
 
 ## Mjesto spremanja podataka
 
-Podatci su spremljeni u datoteci `bogati_ljudi.csv` i `bogati_ljudi.json`.
+Podatci su spremljeni u datoteci `tehnoloski_bogatasi.csv` i `tehnoloski_bogatasi.json`.
 
 ## Baza podataka korištena za spremanje podataka
 
