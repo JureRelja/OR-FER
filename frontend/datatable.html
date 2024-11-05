@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tehnološki bogataši</title>
+    <description class="hidden"
+      >Ovaj otvoreni skup podataka predstavlja podatke o najbogatijim ljudima
+      svijeta koje su svoje bogatstvo stekli u tehnološkoj industriji. Podatci
+      su dostupni za preuzimanje u CSV i JSON formatu.</description
+    >
+    <author class="hidden">Jure Reljanović</author>
+    <link rel="stylesheet" href="style.css" />
+    <!-- bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div>
+      <h1>Tehnološki bogataši - ljudima čitljivi podatci</h1>
+      <p>
+        Ovaj otvoreni skup podataka predstavlja podatke o najbogatijim ljudima
+        svijeta koje su svoje bogatstvo stekli u tehnološkoj industriji. Podatci
+        su dostupni za preuzimanje u CSV i JSON formatu.
+      </p>
+      <p>Autor: Jure Reljanović</p>
+    </div>
+
+    <div class="table_component" id="tablica" role="region" tabindex="0">
+      <table>
+        <caption>
+          <h3>Tehnološki bogataši</h3>
+          <div>
+            <select
+              id="atribut"
+              class="form-select mb-3"
+              aria-label="Default select example"
+            >
+              <option selected value="wildcard">Sva polja (wildcard)</option>
+              <option value="ime">Ime</option>
+              <option value="srednje_ime">Srednje ime</option>
+              <option value="prezime">Prezime</option>
+              <option value="drzava_rodjenja">Država rođenja</option>
+              <option value="drzava_stanovanja">Država stanovanja</option>
+              <option value="pohadjao_fakultet">Pohađao fakultet</option>
+              <option value="naziv">Naziv kompanije</option>
+              <option value="drzava_sjedista">Država sjedišta</option>
+              <option value="sektor">Sektor</option>
+              <option value="izvrsni_direktor">Izvršni direktor</option>
+            </select>
+
+            <div class="mb-3">
+              <label for="pretraga" class="form-label">Polje za pretragu</label>
+              <input
+                type="email"
+                class="form-control"
+                id="pretraga"
+                placeholder="Unesite vrijednost"
+              />
+            </div>
+
+            <div class="mb-3">
+              <button id="gumb" type="button" class="btn btn-primary">
+                Pretraži
+              </button>
+              <button id="reset" type="button" class="btn btn-secondary">
+                Poništi pretragu
+              </button>
+            </div>
+
+            <div>
+              <h4>Preuzmi trenutno prikazane podatke</h4>
+
+              <button id="download-json" type="button" class="btn btn-primary">
+                Preuzmi podatke u formatu .json
+              </button>
+
+              <button id="download-csv" type="button" class="btn btn-primary">
+                Preuzmi podatke u formatu .csv
+              </button>
+            </div>
+          </div>
+        </caption>
+        <thead>
+          <tr>
+            <th>Ime</th>
+            <th>Srednje ime</th>
+            <th>Prezime</th>
+            <th>Datum rođenja</th>
+            <th>Država rođenja</th>
+            <th>Država stanovanja</th>
+            <th>Bogatstvo (u milijardama $)</th>
+            <th>Pohađao fakultet</th>
+            <th>Završio fakultet</th>
+            <th>Broj djece</th>
+            <th>Naziv kompanije</th>
+            <th>Godina osnivanja</th>
+            <th>Država sjedišta</th>
+            <th>Sektor</th>
+            <th>Broj zaposlenih</th>
+            <th>Procijenjena vrijednost (u milijardama $)</th>
+            <th>Izvršni direktor</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <h3><a href="./index.html">Povratak na strojno čitljive podatke</a></h3>
+
+    <script src="./fetchData.js"></script>
+  </body>
+</html>

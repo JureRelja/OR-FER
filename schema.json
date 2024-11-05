@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "http://example.com/example.json",
+  "type": "array",
+  "default": [],
+  "title": "Tehnološki bogataši",
+  "description": "Lista tehnoloških bogataša",
+  "items": {
+    "type": "object",
+    "default": {},
+    "title": "Bogata osoba",
+    "description": "Podaci o bogatoj osobi",
+    "required": [
+      "ime",
+      "srednje_ime",
+      "prezime",
+      "datum_rodjenja",
+      "drzava_rodjenja",
+      "drzava_stanovanja",
+      "bogatstvo_u_milijardama_dolara",
+      "pohadjao_fakultet",
+      "zavrsio_fakultet",
+      "broj_djece",
+      "kompanije_s_kojime_je_osoba_povezana"
+    ],
+    "properties": {
+      "ime": {
+        "type": "string",
+        "default": "",
+        "title": "Ime osobe",
+        "description": "Ime osobe"
+      },
+      "srednje_ime": {
+        "type": "string",
+        "default": "",
+        "title": "Srednje ime",
+        "description": "Srednje ime osobe"
+      },
+      "prezime": {
+        "type": "string",
+        "default": "",
+        "title": "Prezime osobe",
+        "description": "Prezime osobe"
+      },
+      "datum_rodjenja": {
+        "type": "string",
+        "default": "",
+        "title": "Datum rođenja",
+        "description": "Datum rođenja osobe u formatu YYYY-MM-DD"
+      },
+      "drzava_rodjenja": {
+        "type": "string",
+        "default": "",
+        "title": "Država rođenja",
+        "description": "Država rođenja osobe (npr. SAD, BiH, Hrvatska)"
+      },
+      "drzava_stanovanja": {
+        "type": "string",
+        "default": "",
+        "title": "Trenutna država stanovanja",
+        "description": "Država u kojoj osoba trenutno živi"
+      },
+      "bogatstvo_u_milijardama_dolara": {
+        "type": "integer",
+        "default": 0,
+        "title": "Bogatstvo u milijardama dolara",
+        "description": "Količina novca koju osoba posjeduje u milijardama dolara"
+      },
+      "pohadjao_fakultet": {
+        "type": "string",
+        "default": "",
+        "title": "Fakultet",
+        "description": "Naziv fakulteta koji je osoba pohađala"
+      },
+      "zavrsio_fakultet": {
+        "type": "boolean",
+        "default": false,
+        "title": "Uspješno završio fakultet",
+        "description": "Da li je osoba uspješno završila fakultet (true/false)"
+      },
+      "broj_djece": {
+        "type": "integer",
+        "default": 0,
+        "title": "Broj djece",
+        "description": "Broj djece koje osoba ima"
+      },
+      "kompanije_s_kojime_je_osoba_povezana": {
+        "type": "array",
+        "default": [],
+        "title": "Kompanije s kojima je osoba povezana",
+        "description": "Lista kompanija s kojima je osoba povezana",
+        "items": {
+          "type": "object",
+          "default": {},
+          "title": "Kompanija",
+          "required": [
+            "id",
+            "naziv",
+            "godina_osnivanja",
+            "drzava_sjedista",
+            "sektor",
+            "broj_zaposlenih",
+            "procijenjena_vrijednost_u_milijardama_dolara",
+            "izvrsni_direktor"
+          ],
+          "properties": {
+            "id": {
+              "type": "integer",
+              "default": 0,
+              "title": "ID kompanije",
+              "description": "Jedinstveni identifikator kompanije"
+            },
+            "naziv": {
+              "type": "string",
+              "default": "",
+              "title": "Naziv kompanije",
+              "description": "Naziv kompanije s kojom je osoba povezana"
+            },
+            "godina_osnivanja": {
+              "type": "integer",
+              "default": 0,
+              "title": "Godina osnivanja kompanije",
+              "description": "Godina osnivanja kompanije"
+            },
+            "drzava_sjedista": {
+              "type": "string",
+              "default": "",
+              "title": "Država u kojoj se nalazi sjedište",
+              "description": "Država u kojoj se nalazi sjedište kompanije"
+            },
+            "sektor": {
+              "type": "string",
+              "default": "",
+              "title": "Poslovni sektor u kojem kompanija posluje",
+              "description": "Poslovni sektor u kojem kompanija posluje (npr. Hosting, Softver, Računala, Mobilni uređaji)"
+            },
+            "broj_zaposlenih": {
+              "type": "integer",
+              "default": 0,
+              "title": "Broj zaposlenih u kompaniji",
+              "description": "Broj zaposlenih u kompaniji"
+            },
+            "procijenjena_vrijednost_u_milijardama_dolara": {
+              "type": "integer",
+              "default": 0,
+              "title": "Procijenjena vrijednost kompanije u milijardama $",
+              "description": "Procijenjena vrijednost kompanije u milijardama dolara"
+            },
+            "izvrsni_direktor": {
+              "type": "string",
+              "default": "",
+              "title": "Izvršni direktor kompanije",
+              "description": "Ime i prezime izvršnog direktora kompanije"
+            }
+          }
+        }
+      }
+    }
+  }
+}
