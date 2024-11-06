@@ -1,0 +1,18 @@
+ime,srednje_ime,prezime,datum_rodjenja,drzava_rodjenja,drzava_stanovanja,bogatstvo_u_milijardama_dolara,pohadjao_fakultet,zavrsio_fakultet,broj_djece,naziv,godina_osnivanja,drzava_sjedista,sektor,broj_zaposlenih,procijenjena_vrijednost_u_milijardama_dolara,izvrsni_direktor
+Elon,Reeve,Musk,1971-06-28,Južna Afrika,SAD,247,Queens University,t,12,"Tesla, Inc.",2003,SAD,Automobili,48000,277,Elon Musk
+Elon,Reeve,Musk,1971-06-28,Južna Afrika,SAD,247,Queens University,t,12,SpaceX,2002,SAD,Svemirske rakete,8000,74,Elon Musk
+Elon,Reeve,Musk,1971-06-28,Južna Afrika,SAD,247,Queens University,t,12,The Boring Company,2016,SAD,Transportacijska infrastruktura,10,0.5,Steve Davis
+Elon,Reeve,Musk,1971-06-28,Južna Afrika,SAD,247,Queens University,t,12,Neuralink,2016,SAD,Neurotehnoologija,100,0.1,Jared Birchall
+Elon,Reeve,Musk,1971-06-28,Južna Afrika,SAD,247,Queens University,t,12,SolarCity,2006,SAD,Solarna energija,15000,2.6,Lyndon Rive
+Elon,Reeve,Musk,1971-06-28,Južna Afrika,SAD,247,Queens University,t,12,X (bivši Twitter),2010,SAD,Društvena mreža,100,0.5,Elon Musk
+Jeff,Preston,Bezos,1964-01-12,SAD,SAD,177,Princeton University,t,4,Amazon,1994,SAD,"Online trgovina, Hosting, Softvere",1600000,1900,Jeff Bezos
+Jeff,Preston,Bezos,1964-01-12,SAD,SAD,177,Princeton University,t,4,Blue Origin,2000,SAD,Svemirske rakete,11000,40,Dave Limp
+Jeff,Preston,Bezos,1964-01-12,SAD,SAD,177,Princeton University,t,4,The Washington Post,1877,SAD,Novine,1050,0.25,Will Lewis
+Bill,Henry,Gates,1955-10-28,SAD,SAD,124,Harvard University,t,3,Microsoft,1975,SAD,"Softverska kompanija, Mobilni uređaji, Računala",228000,3100,Satya Nadella
+Mark,Elliot,Zuckerberg,1984-05-14,SAD,SAD,97,Harvard University,t,3,Facebook,2004,SAD,Društvena mreža,86000,1100,Mark Zuckerberg
+Lawrence,Joseph,Ellison,1944-08-17,SAD,SAD,93,University of Illinois at Urbana-Champaign,f,2,Oracle Corporation,1977,SAD,Softverska kompanija,159000,481,Safra Catz
+Larry,Edward ,Page,1973-03-26,SAD,SAD,91,Stanford University,t,2,Google,1998,SAD,"Hosting, Softver, Računala, Mobilni uređaji",182000,2000,Sundar Pichai
+Sergey,Mikhailovich,Brin,1973-08-21,Rusija,SAD,89,Stanford University,t,3,Google,1998,SAD,"Hosting, Softver, Računala, Mobilni uređaji",182000,2000,Sundar Pichai
+Steve,Gary,Wozniak,1950-08-11,SAD,SAD,100,"University of California, Berkeley",t,3,Apple Inc.,1976,SAD,"Računala, Mobilni uređaji, Softver",147000,2000,Tim Cook
+Wilmot,Reed,Hastings,1960-10-08,SAD,SAD,5,Stanford University,t,2,Netflix,1997,SAD,Streaming servis,13000,320,Reed Hastings
+Jen-Hsun,,Huang,1963-02-17,Tajvan,SAD,4,Stanford University,t,2,Nvidia,1993,SAD,Grafičke kartice,29600,3400,Jensen Huang

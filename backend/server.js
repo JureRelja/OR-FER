@@ -21,12 +21,12 @@ app.get("/download", (req, res) => {
 
   //   Downloading csv format
   if (params.type == "csv") {
-    let file = `../tehnoloski_bogatasi.csv`;
+    let file = `./tehnoloski_bogatasi.csv`;
     res.download(file);
 
     // Downloading json format
   } else if (params.type == "json") {
-    let file = `../tehnoloski_bogatasi.json`;
+    let file = `./tehnoloski_bogatasi.json`;
     res.download(file);
 
     //Unknown file format

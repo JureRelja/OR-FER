@@ -26,7 +26,7 @@ const getJsonData = async (params) => {
                  bogataOsoba
                  JOIN OsobaKompanija ON BogataOsoba.id = OsobaKompanija.id_Osoba
                  JOIN Kompanija as t ON OsobaKompanija.id_Kompanija = t.id
-              WHERE BogataOsoba.ime LIKE '%${params.searchInput}%' or BogataOsoba.srednje_Ime LIKE '%${params.searchInput}%' or BogataOsoba.prezime LIKE '%${params.searchInput}%' or BogataOsoba.drzava_Rodjenja LIKE '%${params.searchInput}%' or BogataOsoba.drzava_Stanovanja LIKE '%${params.searchInput}%' or BogataOsoba.pohadjao_Fakultet LIKE '%${params.searchInput}%'  or Kompanija.naziv LIKE '%${params.searchInput}%' or Kompanija.drzava_Sjedista LIKE '%${params.searchInput}%' or Kompanija.sektor LIKE '%${params.searchInput}%' or Kompanija.izvrsni_Direktor LIKE '%${params.searchInput}%'
+              WHERE BogataOsoba.ime LIKE '%${params.searchInput}%' or BogataOsoba.srednje_Ime LIKE '%${params.searchInput}%' or BogataOsoba.prezime LIKE '%${params.searchInput}%' or BogataOsoba.drzava_Rodjenja LIKE '%${params.searchInput}%' or BogataOsoba.drzava_Stanovanja LIKE '%${params.searchInput}%' or BogataOsoba.pohadjao_Fakultet LIKE '%${params.searchInput}%'  or t.naziv LIKE '%${params.searchInput}%' or t.drzava_Sjedista LIKE '%${params.searchInput}%' or t.sektor LIKE '%${params.searchInput}%' or t.izvrsni_Direktor LIKE '%${params.searchInput}%'
              GROUP BY
                  BogataOsoba.ime,
                  BogataOsoba.srednje_Ime,
