@@ -1,0 +1,708 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Tehnoloski bogatasi API",
+    "contact": {
+      "name": "API Support",
+      "email": "jure.reljanovic@fer.hr"
+    },
+    "license": {
+      "name": "CC0 1.0 Universal",
+      "identifier": "CC0 1.0"
+    },
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8080/api/v1",
+      "description": "Server"
+    }
+  ],
+  "paths": {
+    "/tehnoloski-bogatasi": {
+      "get": {
+        "tags": ["collection"],
+        "description": "Returns all technology milionares",
+        "responses": {
+          "200": {
+            "description": "Fetch successfull",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TehnoloskiBogatasiResponse"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Fetch failled",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["single"],
+        "description": "Adds new technology milionare",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TehnoloskiBogatasDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Creation successfull",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TehnoloskiBogatasResponse"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Creation failled",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tehnoloski-bogatasi/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "ID bogataša",
+          "required": true,
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          "style": "simple",
+          "examples": {
+            "prviBogatas": {
+              "description": "Prvi bogataš u skupu",
+              "value": 1
+            },
+            "drugiBogatas": {
+              "description": "Drugi bogataš u skupu",
+              "value": 2
+            },
+            "treciBogatas": {
+              "description": "Treći bogataš u skupu",
+              "value": 3
+            }
+          }
+        }
+      ],
+      "get": {
+        "tags": ["single"],
+        "description": "Returns technology millionare with specified ID",
+        "responses": {
+          "200": {
+            "description": "Fetch successfull",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TehnoloskiBogatasResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Fetch failled",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": ["single"],
+        "description": "Returns technology millionare with specified ID",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TehnoloskiBogatasDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Fetch successfull",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Fetch failled",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["single"],
+        "description": "Deletes a technology billionare with specified ID",
+        "responses": {
+          "200": {
+            "description": "Fetch successfull",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Fetch failled",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "/kompanije/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "ID kompanije",
+          "required": true,
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          "style": "simple",
+          "examples": {
+            "prvaKompanija": {
+              "description": "Prva kompanija u skupu",
+              "value": 1
+            },
+            "drugaKompanija": {
+              "description": "Druga kompanija u skupu",
+              "value": 2
+            },
+            "trecaKompanija": {
+              "description": "Treća kompanija u skupu",
+              "value": 3
+            }
+          }
+        }
+      ],
+      "get": {
+        "description": "Returns technology millionare with specified ID",
+        "responses": {
+          "200": {
+            "description": "Fetch successfull",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KompanijaResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Fetch failled",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "description": "Returns technology millionare with specified ID",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KompanijaDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Fetch successfull",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Put failled",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "description": "Returns technology millionare with specified ID",
+        "responses": {
+          "200": {
+            "description": "Fetch successfull",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Fetch failled",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/kompanije": {
+      "get": {
+        "description": "Returns technology millionare with specified ID",
+        "responses": {
+          "200": {
+            "description": "Fetch successfull",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/KompanijaResponse"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Fetch failled",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "description": "Returns technology millionare with specified ID",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KompanijaDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Fetch successfull",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KompanijaResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Fetch failled",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/osobe": {
+      "get": {
+        "description": "Returns all technology millionares without their companies",
+        "responses": {
+          "200": {
+            "description": "Fetch successfull",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OsobaResponse"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Fetch failled",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "TehnoloskiBogatas": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "ime": {
+            "type": "string"
+          },
+          "srednje_ime": {
+            "type": "string"
+          },
+          "prezime": {
+            "type": "string"
+          },
+          "drzava_Rodjenja": {
+            "type": "string"
+          },
+          "drzava_Stanovanja": {
+            "type": "string"
+          },
+          "bogatstvo_U_Milijardama_Dolara": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "pohadjao_Fakultet": {
+            "type": "boolean"
+          },
+          "zavrsio_Fakultet": {
+            "type": "boolean"
+          },
+          "broj_Djece": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "kompanije_S_Kojime_Je_Osoba_Povezana": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Kompanija"
+            }
+          }
+        }
+      },
+      "Osoba": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "ime": {
+            "type": "string"
+          },
+          "srednje_ime": {
+            "type": "string"
+          },
+          "prezime": {
+            "type": "string"
+          },
+          "drzava_Rodjenja": {
+            "type": "string"
+          },
+          "drzava_Stanovanja": {
+            "type": "string"
+          },
+          "bogatstvo_U_Milijardama_Dolara": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "pohadjao_Fakultet": {
+            "type": "boolean"
+          },
+          "zavrsio_Fakultet": {
+            "type": "boolean"
+          },
+          "broj_Djece": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "KompanijaDto": {
+        "type": "object",
+        "properties": {
+          "naziv": {
+            "type": "string"
+          },
+          "godina_Osnivanja": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "drzava_Sjedista": {
+            "type": "string"
+          },
+          "sektor": {
+            "type": "string"
+          },
+          "broj_Zaposlenih": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "procijenjena_Vrijednost_U_Milijardama_Dolara": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "izvrsni_Direktor": {
+            "type": "string"
+          }
+        }
+      },
+      "Kompanija": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "naziv": {
+            "type": "string"
+          },
+          "godina_Osnivanja": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "drzava_Sjedista": {
+            "type": "string"
+          },
+          "sektor": {
+            "type": "string"
+          },
+          "broj_Zaposlenih": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "procijenjena_Vrijednost_U_Milijardama_Dolara": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "izvrsni_Direktor": {
+            "type": "string"
+          }
+        }
+      },
+      "TehnoloskiBogatasResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "response": {
+            "type": "object",
+            "$ref": "#/components/schemas/TehnoloskiBogatas"
+          }
+        }
+      },
+      "TehnoloskiBogatasiResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "response": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "$ref": "#/components/schemas/TehnoloskiBogatas"
+            }
+          }
+        }
+      },
+      "TehnoloskiBogatasDto": {
+        "type": "object",
+        "properties": {
+          "ime": {
+            "type": "string"
+          },
+          "srednje_ime": {
+            "type": "string"
+          },
+          "prezime": {
+            "type": "string"
+          },
+          "drzava_Rodjenja": {
+            "type": "string"
+          },
+          "drzava_Stanovanja": {
+            "type": "string"
+          },
+          "bogatstvo_U_Milijardama_Dolara": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "pohadjao_Fakultet": {
+            "type": "boolean"
+          },
+          "zavrsio_Fakultet": {
+            "type": "boolean"
+          },
+          "broj_Djece": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "kompanije": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        }
+      },
+      "KompanijaResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "response": {
+            "type": "object",
+            "$ref": "#/components/schemas/Kompanija"
+          }
+        }
+      },
+      "OsobaResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "response": {
+            "type": "object",
+            "$ref": "#/components/schemas/Osoba"
+          }
+        }
+      },
+      "Response": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "response": {
+            "type": "object",
+            "default": null
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "response": {
+            "type": "object",
+            "default": null
+          }
+        }
+      }
+    }
+  }
+}
