@@ -35,8 +35,8 @@ CREATE TABLE
 
 CREATE TABLE
     OsobaKompanija (
-        id_Osoba INTEGER NOT NULL REFERENCES BogataOsoba (id),
-        id_Kompanija INTEGER NOT NULL REFERENCES Kompanija (id),
+        id_Osoba INTEGER NOT NULL FOREIGN KEY (id_Osoba) REFERENCES BogataOsoba (id) ON DELETE CASCADE,
+        id_Kompanija INTEGER NOT NULL FOREIGN KEY (id_Kompanija) REFERENCES Kompanija (id),
         CONSTRAINT osoba_kompanija_kljuc PRIMARY KEY (id_Osoba, id_Kompanija)
     );
 
