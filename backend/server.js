@@ -2,6 +2,7 @@ const express = require("express");
 require("dotenv").config();
 const getCsvData = require("./getCsvData");
 const getJsonData = require("./getJsonData");
+const apiHandler = require("./api.route");
 const fs = require("node:fs");
 let converter = require("json-2-csv");
 
@@ -13,6 +14,8 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log("Server Listening on PORT:", PORT);
 });
+
+app.use("/api/v1", apiHandler);
 
 app.get("/download", (req, res) => {
   const params = req.query;
