@@ -568,14 +568,14 @@ app.get("/osobe", async (req, res) => {
 app.get("/openapi", async (req, res) => {
   const response = await fetch("./openapi.json");
 
-  res.status(200).body(response);
+  res.status(200).json(response);
 });
 
 //nepodrzane metode
 app.all("/*", (req, res) => {
   const responseWrapper = new ResponseWrapper(
     "Error",
-    `Metoda ${req.method} nije dopustena`,
+    `Ova ruta ne postoji ili metoda ${req.method} nije dopustena.`,
     null
   );
 

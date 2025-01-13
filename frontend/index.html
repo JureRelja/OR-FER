@@ -19,6 +19,18 @@
     />
   </head>
   <body>
+    <div class="navbar">
+      <div class="navbar-inner" id="logged-out">
+        <button onclick="login()">Prijava</button>
+      </div>
+
+      <div class="navbar-inner hidden" id="logged-in">
+        <button>Korisnički profil</button>
+        <button>Osvježi preslike</button>
+        <button onclick="logout()">Odjava</button>
+      </div>
+    </div>
+
     <div>
       <h1>Tehnološki bogataši - strojno čitljivi podatci</h1>
       <p>
@@ -46,5 +58,8 @@
     </div>
 
     <h3><a href="./datatable.html">Pregled i filtriranje podataka</a></h3>
+
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
+    <script src="./auth.js"></script>
   </body>
 </html>

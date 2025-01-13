@@ -1,5 +1,6 @@
 body {
   padding: 20px;
+  width: 100%;
 }
 
 .hidden {
@@ -37,4 +38,29 @@ body {
   background-color: #ffffff;
   color: #000000;
   padding: 5px;
+}
+
+.navbar {
+  width: 100%;
+  background-color: #6da7e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  width: 100%;
+}
+
+.navbar button {
+  border: 0;
+  font-size: 20px;
+}
+
+.navbar button:hover {
+  cursor: pointer;
+  opacity: 0.9;
 }
