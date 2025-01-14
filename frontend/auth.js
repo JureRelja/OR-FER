@@ -1,6 +1,6 @@
 let auth0Client = null;
 
-const fetchAuthConfig = () => fetch("/auth_config.json");
+const fetchAuthConfig = () => fetch("./auth_config.json");
 
 const configureClient = async () => {
   const response = await fetchAuthConfig();
@@ -16,18 +16,6 @@ window.onload = async () => {
   await configureClient();
 
   updateUI();
-};
-
-const updateUI = async () => {
-  const isAuthenticated = await auth0Client.isAuthenticated();
-
-  if (isAuthenticated) {
-    document.getElementById("logged-out").classList.add("hidden");
-    document.getElementById("logged-in").classList.remove("hidden");
-  } else {
-    document.getElementById("logged-out").classList.remove("hidden");
-    document.getElementById("logged-in").classList.add("hidden");
-  }
 
   const query = window.location.search;
   if (query.includes("code=") && query.includes("state=")) {
@@ -38,6 +26,32 @@ const updateUI = async () => {
 
     // Use replaceState to redirect the user away and remove the querystring parameters
     window.history.replaceState({}, document.title, "/");
+  }
+};
+
+const updateUI = async () => {
+  const isAuthenticated = await auth0Client.isAuthenticated();
+
+  console.log(isAuthenticated);
+
+  if (isAuthenticated) {
+    document.getElementById("logged-out").classList.add("hidden");
+    document.getElementById("logged-in").classList.remove("hidden");
+  } else {
+    document.getElementById("logged-out").classList = "";
+    document.getElementById("logged-in").classList = "hidden";
+  }
+};
+
+const login = async () => {
+  try {
+    await auth0Client.loginWithRedirect({
+      authorizationParams: {
+        redirect_uri: window.location.origin,
+      },
+    });
+  } catch (err) {
+    console.error("Login failed", err);
   }
 };
 

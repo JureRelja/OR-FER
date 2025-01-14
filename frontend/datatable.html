@@ -23,7 +23,15 @@
   <body>
     <div class="navbar">
       <div class="navbar-inner">
-        <button>Prijava</button>
+        <div id="logged-out">
+          <button onclick="login()">Prijava</button>
+        </div>
+
+        <div class="hidden" id="logged-in">
+          <button>Korisnički profil</button>
+          <button>Osvježi preslike</button>
+          <button onclick="logout()">Odjava</button>
+        </div>
       </div>
     </div>
 

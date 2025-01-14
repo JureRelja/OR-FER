@@ -20,14 +20,16 @@
   </head>
   <body>
     <div class="navbar">
-      <div class="navbar-inner" id="logged-out">
-        <button onclick="login()">Prijava</button>
-      </div>
+      <div class="navbar-inner">
+        <div id="logged-out">
+          <button onclick="login()">Prijava</button>
+        </div>
 
-      <div class="navbar-inner hidden" id="logged-in">
-        <button>Korisnički profil</button>
-        <button>Osvježi preslike</button>
-        <button onclick="logout()">Odjava</button>
+        <div class="hidden" id="logged-in">
+          <button>Korisnički profil</button>
+          <button>Osvježi preslike</button>
+          <button onclick="logout()">Odjava</button>
+        </div>
       </div>
     </div>
 
