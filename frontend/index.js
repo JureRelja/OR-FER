@@ -1,5 +1,3 @@
-window.onload = () => {};
-
 document.getElementById("refresh").addEventListener("click", async () => {
   window.open("http://localhost:3000/refresh?type=json", "_blank");
   setTimeout(() => {

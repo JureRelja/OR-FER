@@ -32,9 +32,11 @@ window.onload = async () => {
 const updateUI = async () => {
   const isAuthenticated = await auth0Client.isAuthenticated();
 
+  const isLoggedOut = localStorage.getItem("logout");
+
   console.log(isAuthenticated);
 
-  if (isAuthenticated) {
+  if (isLoggedOut !== "true" && isAuthenticated) {
     document.getElementById("logged-out").classList.add("hidden");
     document.getElementById("logged-in").classList.remove("hidden");
 
@@ -57,17 +59,20 @@ const login = async () => {
         redirect_uri: window.location.origin,
       },
     });
+    localStorage.setItem("logout", "false");
   } catch (err) {
     console.error("Login failed", err);
   }
 };
 
 const logout = () => {
-  auth0Client.logout({
-    logoutParams: {
-      returnTo: window.location.origin,
-    },
-  });
+  localStorage.setItem("logout", "true");
+
+  // auth0Client.logout({
+  //   logoutParams: {
+  //     returnTo: window.location.origin,
+  //   },
+  // });
 
   window.location = "/";
 };
