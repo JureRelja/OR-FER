@@ -22,13 +22,16 @@
     <div class="navbar">
       <div class="navbar-inner">
         <div id="logged-out">
+          <a id="refresh">
+            <button>Osvježi preslike</button>
+          </a>
           <button onclick="login()">Prijava</button>
         </div>
 
         <div class="hidden" id="logged-in">
           <a href="./index.html"><button>Početna</button></a>
           <a href="./profil.html"><button>Korisnički profil</button></a>
-          <a href="http://localhost:3000/refresh">
+          <a id="refresh">
             <button>Osvježi preslike</button>
           </a>
           <button onclick="logout()">Odjava</button>
@@ -62,9 +65,10 @@
       </ul>
     </div>
 
-    <h3><a href="./datatable.html">Pregled i filtriranje podataka</a></h3>
+    <h3><a href="./datatable.js">Pregled i filtriranje podataka</a></h3>
 
     <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
     <script src="./auth.js"></script>
+    <script src="./index.js"></script>
   </body>
 </html>

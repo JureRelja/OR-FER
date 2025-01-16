@@ -30,9 +30,9 @@
         <div class="hidden" id="logged-in">
           <a href="./index.html"><button>Početna</button></a>
           <a href="./profil.html"><button>Korisnički profil</button></a>
-          <a href="http://localhost:3000/refresh">
-            <button>Osvježi preslike</button>
-          </a>
+
+          <button id="refresh">Osvježi preslike</button>
+
           <button onclick="logout()">Odjava</button>
         </div>
       </div>
@@ -131,6 +131,7 @@
     <h3><a href="./index.html">Povratak na strojno čitljive podatke</a></h3>
 
     <script src="./fetchData.js"></script>
+    <script src="./index.js"></script>
 
     <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
     <script src="./auth.js"></script>

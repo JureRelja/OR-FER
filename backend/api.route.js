@@ -186,10 +186,20 @@ app.get("/tehnoloski-bogatasi/:id", async (req, res) => {
       throw Error("Rich person with entered ID doesn't exist");
     }
 
+    let result = {
+      "@context": {
+        "@vocab": "http://schema.org/",
+        ime: "givenName",
+        prezime: "familyName",
+      },
+    };
+
+    result = { ...result, ...body.rows[0] };
+
     const responseWrapper = new ResponseWrapper(
       "OK",
       "Dohvacen tehnoloski bogatas",
-      body.rows
+      result
     );
 
     res.status(200).json(responseWrapper);

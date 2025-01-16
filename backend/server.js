@@ -92,29 +92,31 @@ app.get("/refresh", async (req, res) => {
   const jsonPath = `./tehnologski_bogatasi.json`;
   console.log("refreshing");
 
-  const jsonresult = await getJsonData(req.query);
-  console.log(jsonresult);
+  if (req.query.type === "csv") {
+    const jsonresult = await getJsonData(req.query);
+    console.log(jsonresult);
 
-  try {
-    fs.writeFileSync(jsonPath, JSON.stringify(jsonresult), {
-      flag: "a+",
-    });
+    try {
+      fs.writeFileSync(jsonPath, JSON.stringify(jsonresult), {
+        flag: "a+",
+      });
 
-    res.download(jsonPath);
-  } catch (error) {
-    console.error(error);
-  }
+      res.download(jsonPath);
+    } catch (error) {
+      console.error(error);
+    }
+  } else if (req.query.type === "json") {
+    const csvresult = await getCsvData(req.query);
+    console.log(csvresult);
+    const csv = converter.json2csv(csvresult);
 
-  const csvresult = await getCsvData(req.query);
-  console.log(csvresult);
-  const csv = converter.json2csv(csvresult);
-
-  try {
-    fs.writeFileSync(csvPath, csv, {
-      flag: "a+",
-    });
-    res.download(csvPath);
-  } catch (error) {
-    console.error(error);
+    try {
+      fs.writeFileSync(csvPath, csv, {
+        flag: "a+",
+      });
+      res.download(csvPath);
+    } catch (error) {
+      console.error(error);
+    }
   }
 });
