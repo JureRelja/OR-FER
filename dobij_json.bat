@@ -1,4 +1,4 @@
-docker exec -u postgres mojaPostgresBaza psql -d ORbaza -c "
+docker exec -u postgres mojaBazaSpremnik psql -d orbaza -c "
 COPY (
     with
         osobe as (

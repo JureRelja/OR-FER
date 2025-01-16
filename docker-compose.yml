@@ -14,10 +14,10 @@ services:
         condition: service_healthy
     environment:
       - PORT=8080
-      - PGLINK=postgres://postgres:1234@mojaPostgresBaza:5432/ORbaza
+      - PGLINK=postgres://postgres:1234@mojaPostgresBaza:5432/orbaza
 
   mojaPostgresBaza:
-    image: "jurerelja/or-fer:latest"
+    image: "jurerelja/or-fer:baza"
     container_name: mojaBazaSpremnik
     ports:
       - "5432:5432"

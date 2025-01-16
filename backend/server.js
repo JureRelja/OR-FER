@@ -84,3 +84,37 @@ app.get("/downloadFilteredData", async (req, res) => {
     }
   }
 });
+
+app.get("/refresh", async (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
+
+  const csvPath = `./tehnologski_bogatasi.csv`;
+  const jsonPath = `./tehnologski_bogatasi.json`;
+  console.log("refreshing");
+
+  const jsonresult = await getJsonData(req.query);
+  console.log(jsonresult);
+
+  try {
+    fs.writeFileSync(jsonPath, JSON.stringify(jsonresult), {
+      flag: "a+",
+    });
+
+    res.download(jsonPath);
+  } catch (error) {
+    console.error(error);
+  }
+
+  const csvresult = await getCsvData(req.query);
+  console.log(csvresult);
+  const csv = converter.json2csv(csvresult);
+
+  try {
+    fs.writeFileSync(csvPath, csv, {
+      flag: "a+",
+    });
+    res.download(csvPath);
+  } catch (error) {
+    console.error(error);
+  }
+});

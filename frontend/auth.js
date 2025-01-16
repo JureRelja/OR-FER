@@ -37,6 +37,13 @@ const updateUI = async () => {
   if (isAuthenticated) {
     document.getElementById("logged-out").classList.add("hidden");
     document.getElementById("logged-in").classList.remove("hidden");
+
+    document.getElementById("ipt-access-token").innerHTML =
+      await auth0Client.getTokenSilently();
+
+    document.getElementById("profilJson").textContent = JSON.stringify(
+      await auth0Client.getUser()
+    );
   } else {
     document.getElementById("logged-out").classList = "";
     document.getElementById("logged-in").classList = "hidden";
@@ -61,4 +68,6 @@ const logout = () => {
       returnTo: window.location.origin,
     },
   });
+
+  window.location = "/";
 };
